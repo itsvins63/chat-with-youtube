@@ -1,5 +1,4 @@
-import os
-from apikey import apikey
+
 
 import streamlit as st
 from langchain import OpenAI
@@ -11,8 +10,9 @@ from langchain.vectorstores import Chroma
 # from langchain.chains import RetrievalQA
 from langchain.chains import ConversationalRetrievalChain
 from langchain.document_loaders import YoutubeLoader
+from dotenv import load_dotenv
 
-os.environ['OPENAI_API_KEY'] = apikey
+load_dotenv()
 
 def clear_history():
     if 'history' in st.session_state:
