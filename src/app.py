@@ -76,9 +76,10 @@ st.title("Chat with websites")
 with st.sidebar:
     st.header("Settings")
     website_url = st.text_input("Website URL")
+    st.info("Enter Website URL ")
 
 if website_url is None or website_url == "":
-    st.info("Please enter a website URL")
+    st.info("Chat with Website")
 
 else:
     # session state
