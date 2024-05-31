@@ -35,7 +35,7 @@ if youtube_url:
         vector_store = Chroma.from_documents(chunks, embeddings)
 
         # llm = OpenAI(temperature=0)
-        llm = ChatOpenAI(model="gpt-40", temperature=1)
+        llm = ChatOpenAI(model="gpt-4o", temperature=1)
 
         retriever = vector_store.as_retriever()
 
