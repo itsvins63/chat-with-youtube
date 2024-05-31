@@ -45,7 +45,8 @@ if youtube_url:
         st.session_state['crc'] = crc
         st.success("Video Loaded successfully")
 
-question = st.text_input("Ask a question/chat with the video", "Summarise this video")
+questions = ["Summarise this video", "Who is the speaker?", "What is the main topic?, generate quesions based on the transcript"]
+selected_question = st.selectbox("Select a question:", questions)
 submit_button = st.button("Submit Question")
 
 if submit_button:
@@ -55,9 +56,9 @@ if submit_button:
         if 'history' not in st.session_state:
             st.session_state['history'] = []
         
-        response = crc.run({'question': question, 'chat_history': st.session_state['history']})
+        response = crc.run({'question': selected_question, 'chat_history': st.session_state['history']})
         
-        st.session_state['history'].append((question, response))
+        st.session_state['history'].append((selected_question, response))
         st.write(response)
 
         # st.write(st.session_state['history'])
