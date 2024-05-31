@@ -63,3 +63,7 @@ if question:
         for prompts in st.session_state['history']:
             st.write("question: ", prompts[0])
             st.write("answer: ", prompts[1])
+
+            # Suggest the response as the next input
+        st.markdown("**Suggested next input:**")
+        st.markdown(f"`{response}`")
