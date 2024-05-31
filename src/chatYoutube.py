@@ -45,7 +45,7 @@ if youtube_url:
         st.session_state['crc'] = crc
         st.success("Video Loaded successfully")
 
-question = st.text_input("Ask a question/chat with the video")
+question = st.text_input("Ask a question/chat with the video", "Summarise this video")
 
 if question:
     # response = chain.run(question)
