@@ -46,8 +46,9 @@ if youtube_url:
         st.success("Video Loaded successfully")
 
 question = st.text_input("Ask a question/chat with the video", "Summarise this video")
+submit_button = st.button("Submit Question")
 
-if question:
+if submit_button:
     # response = chain.run(question)
     if 'crc' in st.session_state:
         crc = st.session_state['crc']
